@@ -5,7 +5,7 @@ Its worth mentioning, I've leveraged <a href="https://pytorch.org/">pytorch</a> 
 
 Before one comes to the conclusion, yes the project should be named transformer.net but llm.net sounds cooler so I'm keeping it.
 
-To keep true to the name however, the `main.py` file implements the transformer to create a `word embedding generator` and, consequently, a `gpt`. Realistically it could be used to create any sort of machine learning utility based of a transformer.
+To keep true to the name however, the `main.py` file implements the transformer to create a `gpt`. Realistically it could be used to create any sort of machine learning utility based of a transformer.
 
 
 ## Technicalities
