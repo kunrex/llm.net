@@ -16,13 +16,4 @@ class Attention(Component):
         return
 
     def front_propagate(self, tensor_in):
-        queries = self.__query_matrix * tensor_in
-        keys = self.__key_matrix * tensor_in
-
-        dot = Tensor.transpose(queries) * keys
-        for i in range(0, self._vector_in):
-            for j in range(i + 1, self._vector_in):
-                dot[(i, j)] = -math.inf
-
-        Tensor.soft_max(dot)
-        tensor_in += self.__value_up * self.__value_down * tensor_in * dot
+        return tensor_in + self.__value_up * self.__value_down * tensor_in * Tensor.soft_max(Tensor.upper(Tensor.transpose(self.__query_matrix * tensor_in) * self.__key_matrix))

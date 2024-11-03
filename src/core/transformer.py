@@ -27,28 +27,25 @@ class Transformer(Component):
         self.__block_count = block_count
         self.__blocks = [Block(vector_in, attention_space, ml_perceptron_space) for i in range(block_count)]
 
-    #takes in a pytorch tensor
-    def train(self, tensor):
-        current = Tensor.from_tensor(tensor)
+    def train(self, tensor, actual):
+        result = self.front_propagate(tensor)
 
-        self.front_propagate(current)
-
-        last = Tensor.soft_max(current[(current.columns() - 1, )])
-        actual = Tensor.soft_max(Tensor.from_tensor(tensor[:, -1]))
-
+        last = Tensor.soft_max(result)[result.columns() - 1, ]
         cost = cost_function(last, actual)
 
         #backpropagate
         cost.backward()
-        print("EXPECTED: {}; RESULT: {}".format(actual, last))
 
     #takes in a pytorch tensor
     def test(self, tensor):
-        current = Tensor.from_tensor(tensor)
+        result = self.front_propagate(tensor)
 
-        self.front_propagate(current)
-        return Tensor.soft_max(current[(current.columns() - 1, )])
+        return Tensor.soft_max(result)[result.columns() - 1, ]
 
     def front_propagate(self, tensor_in):
+        current = tensor_in
+
         for block in self.__blocks:
-            block.front_propagate(tensor_in)
+            current = block.front_propagate(current)
+
+        return current

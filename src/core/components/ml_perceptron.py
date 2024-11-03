@@ -13,7 +13,4 @@ class MultilayerPerceptron(Component):
         self.bias_down = Tensor.from_random(self._vector_in, self.__vector_space)
 
     def front_propagate(self, tensor_in):
-        projection_up = self.__up_projection * tensor_in + self.__bias_up
-        Tensor.relu(projection_up)
-
-        tensor_in += self.__down_projection * projection_up + self.bias_down
+        return tensor_in + self.__down_projection * Tensor.relu(self.__up_projection * tensor_in + self.__bias_up) + self.bias_down

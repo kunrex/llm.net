@@ -9,4 +9,4 @@ class Block(Component):
         self.__ml_perceptron = MultilayerPerceptron(vector_in, ml_perceptron_space)
 
     def front_propagate(self, tensor_in):
-        self.__ml_perceptron.front_propagate(self.__attention.front_propagate(tensor_in))
+        return self.__ml_perceptron.front_propagate(self.__attention.front_propagate(tensor_in))
