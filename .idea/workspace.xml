@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11fac922-a0b1-4bc2-9f34-44892cdf6df4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/core/implementations/embedding.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/tensors/tensor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/tensors/tensor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/transformer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="11fac922-a0b1-4bc2-9f34-44892cdf6df4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

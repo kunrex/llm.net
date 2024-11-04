@@ -2,7 +2,6 @@ import csv
 import os, os.path
 
 from abc import ABC
-from lib2to3.pgen2.tokenize import tokenize
 
 from src.core.tensors.tensor import Tensor
 from src.core.transformer import Transformer
