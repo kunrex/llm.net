@@ -71,8 +71,8 @@ class Tensor:
 
     def __from_py_tensor(self, tensor):
         if self.__tensor is None:
-            self._rows = tensor.size(dim = 0)
-            self._columns = tensor.size(dim = 1)
+            self._rows = tensor.shape[0]
+            self._columns = tensor.shape[1]
 
             self.__tensor = tensor
 
@@ -88,8 +88,11 @@ class Tensor:
     def __mul__(self, other):
         return Tensor.from_tensor(self.__tensor @ other.__tensor)
 
-    def get_column(self, index):
-        return self.__tensor[:, index]
+    def last(self):
+        return self.__tensor[:, self.columns() - 1]
+
+    def raw(self):
+        return self.__tensor.item()
 
     def backward(self):
         if self._rows == 1 and self._columns == 1:

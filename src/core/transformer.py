@@ -1,4 +1,4 @@
-import torch
+from abc import abstractmethod
 
 from src.core.component import Component
 from src.core.tensors.tensor import Tensor
@@ -27,22 +27,30 @@ class Transformer(Component):
         self.__block_count = block_count
         self.__blocks = [Block(vector_in, attention_space, ml_perceptron_space) for i in range(block_count)]
 
-    def train(self, tensor, actual):
-        result = self.front_propagate(tensor)
+    @abstractmethod
+    def train(self, file_path):
+        return
 
-        last = Tensor.soft_max(result)[result.columns() - 1, ]
+    @abstractmethod
+    def test(self, in_value):
+        return
+
+    def _train(self, tensor, actual):
+        result = self.__front_propagate(tensor)
+
+        last = Tensor.soft_max(result).last()
         cost = cost_function(last, actual)
 
         #backpropagate
         cost.backward()
 
     #takes in a pytorch tensor
-    def test(self, tensor):
-        result = self.front_propagate(tensor)
+    def _test(self, tensor):
+        result = self.__front_propagate(tensor)
 
-        return Tensor.soft_max(result)[result.columns() - 1, ]
+        return Tensor.soft_max(result).last()
 
-    def front_propagate(self, tensor_in):
+    def __front_propagate(self, tensor_in):
         current = tensor_in
 
         for block in self.__blocks:

@@ -5,14 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="11fac922-a0b1-4bc2-9f34-44892cdf6df4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/llm.net.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/components/attention.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/components/attention.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/components/block.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/components/block.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/components/ml_perceptron.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/components/ml_perceptron.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/core/implementations/embedding.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/tensors/tensor.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/tensors/tensor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/core/transformer.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/transformer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
@@ -42,6 +36,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/kunalkashyap/Projects/llm.net&quot;,
