@@ -24,6 +24,10 @@ class Tensor:
     def log(tensor_in):
         return Tensor.from_tensor(torch.log(tensor_in.__tensor))
 
+    @staticmethod
+    def negate(tensor_in):
+        return Tensor.from_tensor(torch.neg(tensor_in.__tensor))
+
     @classmethod
     def zeros(cls, rows, columns):
         return cls().__zeros(rows, columns)

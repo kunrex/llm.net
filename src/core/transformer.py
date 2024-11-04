@@ -6,7 +6,7 @@ from src.core.components.block import Block
 
 #CROSS ENTROPY
 def cost_function(predicted, actual):
-    return - Tensor.transpose(Tensor.log(actual)) * predicted
+    return Tensor.negate(Tensor.transpose(Tensor.log(actual)) * predicted)
 
 #My implementation of a general purpose transformer.
 
